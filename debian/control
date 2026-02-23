@@ -1,0 +1,12 @@
+Source: boaviztapi 
+Section: python
+Priority: optional
+Maintainer: Boavizta <open-source@boavizta.org>
+Build-Depends: debhelper-compat (= 13), pybuild-plugin-pyproject, dh-sequence-python3, pkg-config, python3-all-dev, python3-fastapi, python3-pydantic, python3-pydantic-settings, python3-pandas, python3-pytest, python3-uvicorn, python3-poetry, python3-aiofile, python3-numpy, python3-scipy, python3-rapidfuzz, python3-markdown, python3-mangu, python3-importlib-metadata, python3-pyyaml, python3-toml, python3-aiohttp, python3-urllib3
+Homepage: https://github.com/boavizta/boaviztapi
+
+Package: boaviztapi 
+Version: 2.0.2 
+Architecture: amd64
+Depends: python3-pip, python3-venv, ${python3:Depends}, ${misc:Depends}
+Description: Giving access to BOAVIZTA reference data and methodologies trough a RESTful API 
