@@ -1,0 +1,20 @@
+#!/bin/bash
+
+NEEDED_PYTHON_PACKAGES=(mangum pyyaml)
+
+cd /usr/lib/python3/dist-packages/boaviztapi || exit
+python3 -m venv --system-site-packages venv
+source venv/bin/activate
+
+for package in "${NEEDED_PYTHON_PACKAGES[@]}"
+do
+	if python3 -m pip show "${package}" 
+	then
+		echo "${package} is already present"
+	else
+		echo "${package} is not present"
+		python3 -m pip install ${package}
+	fi
+done
+
+python3 -m uvicorn boaviztapi.main:app --host 127.0.0.1 --port 5000
